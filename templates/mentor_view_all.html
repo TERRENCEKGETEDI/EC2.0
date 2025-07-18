@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Student Submissions</title>
+    <link rel="stylesheet" href="/static/common.css">
+</head>
+<body>
+        <header>
+        <div>
+            <p id="name">Loading...</p>
+        </div>
+        <div>
+            <h1>Electronic Campus 2.0</h1>
+            <hr>
+            <div>
+                <a href="">[Academic Report]</a>
+                <!-- <a href="">[Test]</a> -->
+                <!-- <a href="">[Results]</a> -->
+                <a href="student.html">(Student)</a>
+                <a href="/mentor/view_all">(Staff)</a>
+                <a href="/mentor/marking">(marking)</a>
+            </div>
+        </div>
+        <div>
+            <!-- <a href="">[Login]</a> -->
+            <a href="/logout">[Logout]</a>
+        </div>
+    </header>
+    <h1>All Student Code Submissions</h1>
+    <!-- <h2>All Code Submissions</h2> -->
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>First</th>
+            <th>Second</th>
+            <th>Third</th>
+            <th>Fourth</th>
+            <th>Fifth</th>
+            <th>Long</th>
+        </tr>
+        {% for row in records %}
+        <tr>
+            <td>{{ row['firstname'] }} {{ row['surname'] }}</td>
+            <td>{{ row['email'] }}</td>
+            <td><pre>{{ row['java_code_first'] or '' }}</pre></td>
+            <td><pre>{{ row['java_code_second'] or '' }}</pre></td>
+            <td><pre>{{ row['java_code_third'] or '' }}</pre></td>
+            <td><pre>{{ row['java_code_fourth'] or '' }}</pre></td>
+            <td><pre>{{ row['java_code_fifth'] or '' }}</pre></td>
+            <td><pre>{{ row['java_code_long'] or '' }}</pre></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

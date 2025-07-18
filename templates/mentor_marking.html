@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/common.css">
+</head>
+<body>
+        <header>
+        <div>
+            <p id="name">Loading...</p>
+        </div>
+        <div>
+            <h1>Electronic Campus 2.0</h1>
+            <hr>
+            <div>
+                <!-- <a href="">[Academic Report]</a> -->
+                <!-- <a href="">[Test]</a> -->
+                <!-- <a href="">[Results]</a> -->
+                <a href="student.html">(Student)</a>
+                <a href="/mentor/view_all">(Staff)</a>
+                <a href="/mentor/marking">(marking)</a>
+            </div>
+        </div>
+        <div>
+            <!-- <a href="">[Login]</a> -->
+            <a href="/logout">[Logout]</a>
+        </div>
+    </header>
+<h2>Student List for Marking</h2>
+<table>
+  <thead>
+    <tr><th>Firstname</th><th>Surname</th><th>Email</th><th>Marked?</th><th>Action</th></tr>
+  </thead>
+  <tbody>
+    {% for user in users %}
+    <tr>
+      <td>{{ user.firstname }}</td>
+      <td>{{ user.surname }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ 'Yes' if user.marked else 'No' }}</td>
+      <td><a href="{{ url_for('mentor_marking_student', email=user.email) }}"><button>Mark</button></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/common.css">
+</head>
+<body>
+        <header>
+        <div>
+            <p id="name">Loading...</p>
+        </div>
+        <div>
+            <h1>Electronic Campus 2.0</h1>
+            <hr>
+            <div>
+                <!-- <a href="">[Academic Report]</a> -->
+                <!-- <a href="">[Test]</a> -->
+                <!-- <a href="">[Results]</a> -->
+                <a href="student.html">(Student)</a>
+                <a href="/mentor/view_all">(Staff)</a>
+                <a href="/mentor/marking">(back)</a>
+            </div>
+        </div>
+        <div>
+            <!-- <a href="">[Login]</a> -->
+            <a href="/logout">[Logout]</a>
+        </div>
+    </header>
+<!-- <h2>Submitted Code for {{ student['firstname'] }} {{ student['surname'] }}</h2>
+
+{% if codes %}
+    <h3>Short Code 1:</h3>
+    <pre>{{ codes['java_code_first'] or '(empty)' }}</pre>
+
+    <h3>Short Code 2:</h3>
+    <pre>{{ codes['java_code_second'] or '(empty)' }}</pre>
+
+    <h3>Short Code 3:</h3>
+    <pre>{{ codes['java_code_third'] or '(empty)' }}</pre>
+
+    <h3>Short Code 4:</h3>
+    <pre>{{ codes['java_code_fourth'] or '(empty)' }}</pre>
+
+    <h3>Short Code 5:</h3>
+    <pre>{{ codes['java_code_fifth'] or '(empty)' }}</pre>
+
+    <h3>Long Code:</h3>
+    <pre>{{ codes['java_code_long'] or '(empty)' }}</pre>
+{% else %}
+    <p>No code submissions found for this student.</p>
+{% endif %} -->
+
+<h2>Code Submissions for {{ student.firstname }} {{ student.surname }} ({{ student.email }})</h2>
+
+{% for label, code in codes.items() %}
+  <h3>{{ label.replace('_', ' ').title() }}</h3>
+  <pre>{{ code or 'No submission' }}</pre>
+{% endfor %}
+
+<form method="POST">
+  <textarea name="feedback" rows="5" cols="100" placeholder="Write your feedback here..."></textarea><br>
+  <label><input type="checkbox" name="marked" value="1"> Marked</label><br>
+  <button type="submit">Submit Feedback</button>
+</form>
+
+
+
+</body>
+</html>

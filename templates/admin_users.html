@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Users</title>
+</head>
+<body>
+    <h1>User Accounts</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Admin?</th><th>Mentor?</th><th>Actions</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user['id'] }}</td>
+            <td>{{ user['firstname'] }} {{ user['surname'] }}</td>
+            <td>{{ user['email'] }}</td>
+            <td>{{ user['phone'] }}</td>
+            <td>{{ 'Yes' if user['is_admin'] else 'No' }}</td>
+            <td>{{ 'Yes' if user['is_mentor'] else 'No' }}</td>
+            <td>
+                <a href="{{ url_for('reset_password_form', user_id=user['id']) }}">Reset Password</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

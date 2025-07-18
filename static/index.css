@@ -1,0 +1,27 @@
+main{
+    width: fit-content;
+    margin: auto;
+}
+main>h2{
+    text-align: center;
+    color: #eeee00;
+}
+table{
+    background-color: #5e80c5;
+}
+table,td{
+    /* border: 2px solid; */
+    font-size: 1.2rem;
+}
+main>table td{
+    margin: 20px;
+}
+main>table td:nth-child(1){
+    color: #66ffff;
+}
+main>table td:nth-child(2){
+    color: #ffffff;
+}
+main>table tr:nth-child(odd){
+    background-color: #6e8dcb;
+}

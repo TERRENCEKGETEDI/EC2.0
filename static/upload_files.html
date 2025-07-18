@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="testwriting.css">
+</head>
+<body>
+    <header>
+        <div>
+            <p>VISITOR</p>
+        </div>
+        <div>
+            <h1>Electronic Campus 2.0</h1>
+            <hr>
+            <div>
+                <a href="index.html">[Student]</a>
+                <a href="#">[home]</a>
+                <a href="#">[back]</a>
+            </div>
+        </div>
+        <div>
+            <!-- <a href="">[Login]</a> -->
+            <a href="/logout">[Logout]</a>
+        </div>
+    </header>
+    <hr>
+    <main>
+    <h1>Upload Text and File</h1>
+    <form action='/upload' method="POST" enctype="multipart/form-data">
+    <label for="file">Select file:</label>
+    <input type="file" name="file" id="file" />
+
+    <label for="text">Enter text:</label>
+    <textarea name="text" id="text"></textarea>
+
+    <button type="submit">Upload</button>
+</form>
+
+
+    <p><a href="testwriting.html">Back to dashboard</a></p>
+    </main>
+    <footer></footer>
+    <script src="testwriting.js"></script>
+</body>
+</html>
